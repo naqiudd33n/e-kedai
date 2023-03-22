@@ -1,0 +1,20 @@
+<div class="w-full bg-primary p-2">
+    <div class="w-full flex flex-row justify-between">
+        <!-- Navigations -->
+        <ng-container *ngFor="let nav of navigation ; let i = index">
+            <div 
+                class="flex flex-col items-center justify-center"
+                [routerLink]="[nav.link]"
+                [routerLinkActive]="nav.link"
+                (isActiveChange)="onRouterLinkActive($event, i)">
+                <mat-icon
+                    [ngClass]=" nav.isActive ? 'text-amber-500' : 'text-white' "
+                    [svgIcon]="nav.icon">
+                </mat-icon>
+                <span [ngClass]=" nav.isActive ? 'text-amber-500' : 'text-white' ">{{ nav.name }}</span>
+            </div>
+        </ng-container>
+    </div>
+    
+</div>
+

@@ -1,0 +1,40 @@
+<div class="flex flex-col w-full h-full">
+    
+    <!-- Banners -->
+    <div class="w-full">
+        <swiper-banner class="w-full mt-2 sm:mt-4"></swiper-banner>
+
+    </div>
+
+    <!-- Bills -->
+    <div class="w-full flex flex-col mt-2">
+        <div class="grid grid-cols-3 w-full gap-2">
+            <ng-container *ngFor="let category of categories">
+                <div class="col-span-1 w-full flex flex-col items-center justify-center">
+                    <div class="w-full overflow-hidden flex justify-center">
+                        <img class="object-contain w-20 h-20" [src]="category.icon" alt="">
+                    </div>
+                    <span class="mt-2 font-medium">{{category.category | uppercase}}</span>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+
+    <!-- Deals -->
+    <div class="flex flex-col w-full mt-4">
+        <span class="text-lg font-bold">Deals</span>
+        <!-- Deals Carousel -->
+        <div class="flex flex-nowrap items-center justify-start overflow-x-auto w-full mt-2 sm:mt-4">
+            <div class="grid grid-flow-col grid-rows-1 gap-4">
+                <ng-container *ngFor="let deal of deals">
+                    <fuse-card class="flex flex-col h-32 w-52 cursor-pointer border rounded-lg mb-2" >
+                        <img
+                            class="object-cover"
+                            [src]="deal.image">
+                    </fuse-card>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+
+</div>

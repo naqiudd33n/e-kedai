@@ -1,0 +1,102 @@
+<div class="flex flex-col w-full h-full gap-4">
+
+    <!-- User -->
+    <div class="w-full flex flex-col rounded-lg p-4 bg-primary-50">
+
+        <!-- Profile Image -->
+        <div class="flex justify-center">
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.5" d="M50 6.40264e-07C40.1109 6.40264e-07 30.444 2.93245 22.2215 8.42652C13.9991 13.9206 7.59043 21.7295 3.80604 30.8658C0.0216641 40.0021 -0.968502 50.0555 0.960758 59.7545C2.89002 69.4536 7.65206 78.3627 14.6447 85.3553C21.6373 92.348 30.5464 97.11 40.2455 99.0392C49.9445 100.969 59.9979 99.9783 69.1342 96.194C78.2705 92.4096 86.0794 86.001 91.5735 77.7785C97.0676 69.556 100 59.8891 100 50C100.001 43.4336 98.7085 36.9313 96.1961 30.8646C93.6838 24.7978 90.0008 19.2855 85.3577 14.6423C80.7145 9.99918 75.2022 6.31625 69.1354 3.80388C63.0687 1.29152 56.5664 -0.00105023 50 6.40264e-07ZM50 95.841C43.3013 95.8411 36.6842 94.3709 30.6159 91.534C24.5475 88.6972 19.1759 84.5629 14.88 79.423C19.159 77.572 29.832 73.723 36.587 71.755C37.116 71.587 37.212 71.563 37.212 69.183C37.3205 67.2483 37.0091 65.313 36.299 63.51C35.2156 61.0905 34.4712 58.533 34.087 55.91C33.077 54.732 31.707 52.424 30.818 48.001C30.049 44.107 30.409 42.689 30.918 41.366C30.9768 41.2255 31.0249 41.0807 31.062 40.933C31.1512 37.8062 30.9014 34.679 30.317 31.606C29.8703 27.1829 31.1637 22.7596 33.923 19.274C36.111 16.462 40.317 13.024 47.865 12.543H52.072C59.74 13.024 63.947 16.461 66.134 19.274C69.62 23.721 70.196 29.082 69.716 31.606C69.1309 34.6789 68.8811 37.8062 68.971 40.933C69.0044 41.074 69.0526 41.2112 69.115 41.342C69.615 42.664 70.004 44.082 69.215 47.977C68.326 52.4 66.955 54.708 65.946 55.886C65.5584 58.5083 64.8141 61.0653 63.734 63.486C62.8033 65.2147 62.2616 67.126 62.147 69.086C62.147 71.466 62.247 71.486 62.796 71.658C69.214 73.558 80.272 77.379 85.152 79.374C80.8585 84.5282 75.484 88.6751 69.4092 91.5209C63.3345 94.3666 56.7082 95.8415 50 95.841Z" fill="#343434"/>
+            </svg> 
+        </div>
+
+        <span class="text-center">
+            <p>Maung Theta Khun</p>
+            <p>+60 12 345 6789</p>
+            <p>maung.thuta12@gmail.com</p>
+        </span>
+
+        <div class="w-full flex justify-center">
+            <button
+                class="bg-yellow-500 rounded-full w-1/2"
+                mat-flat-button>
+                <span class="text-white">Edit Profile</span>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Security -->
+    <div class="w-full flex flex-col rounded-lg p-4 bg-primary-50">
+
+        <span class="font-semibold">Security</span>
+        <!-- 6-D Pin -->
+        <div class="flex flex-row w-full justify-between items-center border-b border-primary-300 py-2">
+            <span>Change 6-digit PIN</span>
+            <mat-icon class="text-primary" svgIcon="heroicons_outline:chevron-right"></mat-icon>
+        </div>
+
+        <!-- Login -->
+        <div class="flex flex-row w-full justify-between items-center py-2">
+            <span>Biometrics</span>
+            <mat-slide-toggle></mat-slide-toggle>
+        </div>
+    </div>
+
+    <!-- Others -->
+    <div class="w-full flex flex-col rounded-lg p-4 bg-primary-50">
+
+        <span class="font-semibold">Others</span>
+        <!-- 6-D Pin -->
+        <div class="flex flex-row w-full justify-between items-center border-b border-primary-300 py-2">
+            <span>Language</span>
+            <span class="flex items-center">
+                English
+                <mat-icon class="text-primary" svgIcon="heroicons_outline:chevron-right"></mat-icon>
+
+            </span>
+        </div>
+
+        <!-- Notification -->
+        <div class="flex flex-row w-full justify-between items-center border-b border-primary-300 py-2">
+            <span>Notification</span>
+            <mat-slide-toggle></mat-slide-toggle>
+        </div>
+
+        <!-- Location -->
+        <div class="flex flex-row w-full justify-between items-center py-2">
+            <span>Location</span>
+            <mat-slide-toggle></mat-slide-toggle>
+        </div>
+    </div>
+
+    <!-- Customer Support -->
+    <div class="w-full flex flex-col rounded-lg p-4 bg-primary-50">
+
+        <span class="font-semibold">Customer Support</span>
+        <!-- Help Center -->
+        <div class="flex flex-row w-full justify-between items-center border-b border-primary-300 py-2">
+            <span>Help Center</span>
+            <mat-icon class="text-primary" svgIcon="heroicons_outline:chevron-right"></mat-icon>
+        </div>
+
+        <!-- Privacy Policy -->
+        <div class="flex flex-row w-full justify-between items-center border-b border-primary-300 py-2">
+            <span>Privacy Policy</span>
+            <mat-icon class="text-primary" svgIcon="heroicons_outline:chevron-right"></mat-icon>
+        </div>
+
+        <!-- Terms of Use -->
+        <div class="flex flex-row w-full justify-between items-center border-b border-primary-300 py-2">
+            <span>Terms of Use</span>
+            <mat-icon class="text-primary" svgIcon="heroicons_outline:chevron-right"></mat-icon>
+        </div>
+
+        <!-- Contact Us -->
+        <div class="flex flex-row w-full justify-between items-center py-2">
+            <span>Contact Us</span>
+            <mat-icon class="text-primary" svgIcon="heroicons_outline:chevron-right"></mat-icon>
+        </div>
+    </div>
+
+</div>

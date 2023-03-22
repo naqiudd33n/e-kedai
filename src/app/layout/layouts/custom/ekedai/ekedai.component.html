@@ -1,0 +1,16 @@
+<!-- Loading bar -->
+<fuse-loading-bar></fuse-loading-bar>
+
+<!-- Wrapper -->
+<div class="flex flex-col flex-auto w-full bg-card z-0">
+
+    <header class="top-0 sticky z-20"></header>
+    <!-- Content -->
+    <div class="flex flex-col flex-auto p-6">
+        <!-- *ngIf="true" hack is required here for router-outlet to work correctly.
+             Otherwise, layout changes won't be registered and the view won't be updated! -->
+        <router-outlet *ngIf="true"></router-outlet>
+    </div>
+
+    <bottom-nav class="bottom-0 sticky z-10"></bottom-nav>
+</div>

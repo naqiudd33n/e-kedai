@@ -1,0 +1,37 @@
+<div class="w-full">
+    <div 
+        *ngIf="headerType === 'default'" 
+        class="px-4 w-full flex flex-row justify-between items-center bg-card">
+        <!-- Choose Country -->
+        <div class="flex flex-col items-center justify-center w-10 h-12 border rounded p-2">
+            <span class="text-md">MM</span>
+            <mat-icon svgIcon="heroicons_solid:chevron-down"></mat-icon>
+        </div>
+
+        <!-- e-Kedai logo -->
+        <img
+            [routerLink]="['/']"
+            class="sm:w-48 w-36 h-16"
+            [src]="'assets/e-kedai/logo/e-kedai.svg'"
+            [alt]="'e-Kedai Logo'">
+
+        <!-- User & Notification -->
+        <div class="flex flex-row items-center gap-2">
+            <mat-icon class="icon-size-7 text-primary" svgIcon="heroicons_outline:bell"></mat-icon>
+            <!-- <mat-icon class="icon-size-7 text-primary" svgIcon="heroicons_outline:user-circle"></mat-icon> -->
+            <user [showAvatar]="false" ></user>
+        </div>
+
+    </div>
+    <div 
+        *ngIf="headerType === 'back'"
+        class="px-6 py-4 w-full flex flex-row justify-between items-center bg-primary">
+        <mat-icon onclick="history.back()" class="text-white" [svgIcon]="'feather:arrow-left'"></mat-icon>
+        <span class="font-bold text-white">Voucher</span>
+        <div class="flex flex-row gap-2">
+            <mat-icon class="text-white" svgIcon="heroicons_outline:bell"></mat-icon>
+            <mat-icon class="text-white" svgIcon="heroicons_outline:user-circle"></mat-icon>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,11 @@
+{
+    "env": {
+        "name": "dev"
+    },
+    "apiServer": {
+        "ekedaiService": "https://backend.lawat.la/api",
+        "paymentService": "https://stp-staging-frontend.atx.my/api/v1"
+    },
+    "deliverinUrl": "https://theuselessweb.com/",
+    "logging": 0
+}

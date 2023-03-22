@@ -1,0 +1,11 @@
+{
+    "env": {
+        "name": "staging"
+    },
+    "apiServer": {
+        "ekedaiService"       : "https://backend.lawat.la/api",
+        "paymentService"        : "https://stp-staging-frontend.atx.my/api/v1"
+    },
+    "deliverinUrl": "https://dev-my.symplified.ai/?origin=e-kedai",
+    "logging": 0
+}

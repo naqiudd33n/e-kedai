@@ -1,0 +1,11 @@
+{
+    "env": {
+        "name": "prod"
+    },
+    "apiServer": {
+        "ekedaiService"       : "https://backend.lawat.la/api",
+        "paymentService"        : "https://stp-frontend.atx.my/api/v1"
+    },
+    "deliverinUrl": "https://deliverin.my/?origin=e-kedai",
+    "logging": 0
+}
