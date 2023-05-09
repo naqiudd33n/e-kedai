@@ -1,7 +1,10 @@
 import { ChangeDetectorRef, Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 import { EKedaiService } from 'app/core/e-kedai/e-kedai.service';
 import { Category } from 'app/core/e-kedai/e-kedai.types';
 import { Subject, takeUntil } from 'rxjs';
+import * as mrz from 'mrz';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'landing-home',
@@ -14,12 +17,18 @@ export class LandingHomeComponent implements OnInit {
     categories: Category[] = [];
     deals: any[] = [];
 
+
+    passportImage: any;
+    mrzCode: string;
+
     /**
      * Constructor
      */
     constructor(
+        private _router: Router,
         private _eKedaiService: EKedaiService,
         private _changeDetectorRef: ChangeDetectorRef,
+        private _http: HttpClient
     ) {
     }
 
@@ -62,5 +71,36 @@ export class LandingHomeComponent implements OnInit {
             { image: 'https://previews.123rf.com/images/starlineart/starlineart1707/starlineart170700306/82150388-modern-slae-voucher-or-banner-design-with-offer-and-deals-details.jpg' },
             { image: 'https://previews.123rf.com/images/denisined/denisined2005/denisined200500423/146747533-flash-sale-70-off-poster-design-template-discount-banner-special-offer-vector-illustration.jpg' }
         ]
+    }
+
+    selectCategory(category: Category) {
+        this._router.navigate(['/section/' + category.id])
+    }
+
+    onSelectedFile(event: any) {
+        const file: File = event.target.files[0];
+        const reader = new FileReader();
+    }
+
+    onSubmit() {
+        // const formData = new FormData();
+        // formData.append('passportImage', this.passportImage);
+
+        // this._http.post('/api/extract-passport', formData)
+        //     .subscribe((response: any) => {
+        //         console.log("response", response);
+        //     }, (error: any) => {
+        //         console.log("error", error);
+        //     }
+        //     );
+
+
+    }
+
+    parseMrzCode() {
+        this.passportImage = mrz.parse(this.mrzCode);
+
+        console.log("this.mrzCode", this.mrzCode);
+
     }
 }

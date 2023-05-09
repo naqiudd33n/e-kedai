@@ -12,7 +12,7 @@ import { SwiperModule } from 'swiper/angular';
     declarations: [
         SwiperBannerComponent
     ],
-    imports: [
+    imports     : [
         MatButtonModule,
         MatIconModule,
         MatMenuModule,
@@ -22,9 +22,10 @@ import { SwiperModule } from 'swiper/angular';
         SwiperModule,
 
     ],
-    exports: [
+    exports     : [
         SwiperBannerComponent
     ]
 })
-export class SwiperBannerModule {
+export class SwiperBannerModule
+{
 }

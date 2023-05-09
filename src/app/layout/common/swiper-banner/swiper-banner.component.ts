@@ -142,7 +142,7 @@ export class SwiperBannerComponent {
         this.galleryImages = [
             {
                 id: 1,
-                bannerUrl: 'assets/images/banner/img_promo.jpg',
+                bannerUrl: 'https://hellosim.com.my/uploads/hero_image_a2c487e0d1.webp',
                 regionCountryId: '',
                 type: 'MOBILE',
                 actionUrl: null,
@@ -151,7 +151,7 @@ export class SwiperBannerComponent {
             },
             {
                 id: 2,
-                bannerUrl: 'assets/images/banner/img_promo-01.jpeg',
+                bannerUrl: 'https://hellosim.com.my/uploads/hero_plans_ef8bc4f20c.webp',
                 regionCountryId: '',
                 type: 'MOBILE',
                 actionUrl: null,
@@ -160,7 +160,7 @@ export class SwiperBannerComponent {
             },
             {
                 id: 3,
-                bannerUrl: 'assets/images/banner/img_promo-02.jpeg',
+                bannerUrl: 'https://hellosim.com.my/uploads/hero_services_3a9a20fb47.webp',
                 regionCountryId: '',
                 type: 'MOBILE',
                 actionUrl: null,
@@ -169,7 +169,7 @@ export class SwiperBannerComponent {
             },
             {
                 id: 4,
-                bannerUrl: 'assets/images/banner/img_promo-03.jpeg',
+                bannerUrl: 'https://hellosim.com.my/uploads/hero_about_ce37f203a4.webp',
                 regionCountryId: '',
                 type: 'MOBILE',
                 actionUrl: null,
@@ -181,7 +181,7 @@ export class SwiperBannerComponent {
         this.mobileGalleryImages = [
             {
                 id: 1,
-                bannerUrl: 'assets/images/banner/img_promo.jpg',
+                bannerUrl: 'https://hellosim.com.my/uploads/hero_image_a2c487e0d1.webp',
                 regionCountryId: '',
                 type: 'MOBILE',
                 actionUrl: null,
@@ -190,7 +190,7 @@ export class SwiperBannerComponent {
             },
             {
                 id: 2,
-                bannerUrl: 'assets/images/banner/img_promo-01.jpeg',
+                bannerUrl: 'https://hellosim.com.my/uploads/hero_plans_ef8bc4f20c.webp',
                 regionCountryId: '',
                 type: 'MOBILE',
                 actionUrl: null,
@@ -199,7 +199,7 @@ export class SwiperBannerComponent {
             },
             {
                 id: 3,
-                bannerUrl: 'assets/images/banner/img_promo-02.jpeg',
+                bannerUrl: 'https://hellosim.com.my/uploads/hero_services_3a9a20fb47.webp',
                 regionCountryId: '',
                 type: 'MOBILE',
                 actionUrl: null,
@@ -208,7 +208,7 @@ export class SwiperBannerComponent {
             },
             {
                 id: 4,
-                bannerUrl: 'assets/images/banner/img_promo-03.jpeg',
+                bannerUrl: 'https://hellosim.com.my/uploads/hero_about_ce37f203a4.webp',
                 regionCountryId: '',
                 type: 'MOBILE',
                 actionUrl: null,

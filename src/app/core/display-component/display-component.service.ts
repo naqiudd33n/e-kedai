@@ -64,7 +64,7 @@ export class DisplayComponentService {
         return of(false);
     }
 
-    displayHeaderTitle(headerTitle: string): Observable<any> {
+    setHeaderTitle(headerTitle: string): Observable<any> {
         this._headerTitle.next(headerTitle);
         return of(false);
     }

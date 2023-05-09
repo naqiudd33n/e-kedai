@@ -7,6 +7,7 @@ import { LandingHomeComponent } from 'app/modules/landing/home/home.component';
 import { landingHomeRoutes } from 'app/modules/landing/home/home.routing';
 import { FuseCardModule } from '@fuse/components/card';
 import { SwiperBannerModule } from 'app/layout/common/swiper-banner/swiper-banner.module';
+import * as mrz from 'mrz';
 
 @NgModule({
     declarations: [

@@ -12,7 +12,9 @@ export const landingRoutes: Route[] = [
             { path: 'home', loadChildren: () => import('app/modules/landing/home/home.module').then(m => m.LandingHomeModule) },
             { path: 'history', loadChildren: () => import('app/modules/landing/history/history.module').then(m => m.HistoryModule) },
             { path: 'voucher', loadChildren: () => import('app/modules/landing/voucher/voucher.module').then(m => m.VoucherModule) },
-            { path: 'profile', loadChildren: () => import('app/modules/landing/profile/profile.module').then(m => m.ProfileModule) }
+            { path: 'profile', loadChildren: () => import('app/modules/landing/profile/profile.module').then(m => m.ProfileModule) },
+            { path: 'section', loadChildren: () => import('app/modules/landing/section/section.module').then(m => m.SectionModule) },
+            { path: 'payment', loadChildren: () => import('app/modules/landing/payment/payment.module').then(m => m.PaymentModule) }
         ]
     }
 ];

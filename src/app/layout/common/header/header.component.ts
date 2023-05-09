@@ -4,6 +4,9 @@ import { distinctUntilChanged, filter, Subject, takeUntil } from 'rxjs';
 import { UserService } from 'app/core/user/user.service';
 import { User } from 'app/core/user/user.types';
 import { NavigationEnd, Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { CountryDialogComponent } from './country-dialog/country-dialog.component';
+import { DisplayComponentService } from 'app/core/display-component/display-component.service';
 
 @Component({
     selector: 'header',
@@ -13,6 +16,7 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
     headerType: string = 'default';
+    headerTitle: string = '';
     user: User;
 
     private _unsubscribeAll: Subject<any> = new Subject<any>();
@@ -22,8 +26,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
      */
     constructor(
         private _changeDetectorRef: ChangeDetectorRef,
+        private _displayComponentService: DisplayComponentService,
         private _userService: UserService,
-        private _router: Router
+        private _router: Router,
+        public _dialog: MatDialog,
+
     ) {
     }
 
@@ -51,10 +58,20 @@ export class HeaderComponent implements OnInit, OnDestroy {
                 this._changeDetectorRef.markForCheck();
             });
 
+        // Component display diffrently in difrent pages 
+        this._displayComponentService.headerTitle$
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe((response) => {
+                this.headerTitle = response;
+
+                // Mark for check
+                this._changeDetectorRef.markForCheck();
+            });
+
         // this routes implemented when route on init (if the app refreshed)
         const route = this._router.url;
-        const validRoute = ['/home', '/history', '/voucher', '/favourite', '/profile'].includes(route[1])
-        this.headerType = (route.length > 1 && validRoute ? 'default' : 'back')
+        const validRoute = ['/', '/home', '/history', '/voucher', '/favourite', '/profile'].includes(route)
+        this.headerType = (route && validRoute ? 'default' : 'back')
 
         // this routes implemented when route navigation happen
         this._router.events.pipe(
@@ -65,9 +82,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
                 let routes = response.url;
 
                 // set the routes that only for the header of default
-                const validRoutes = ['/home', '/history', '/voucher', '/favourite', '/profile'];
+                const validRoutes = ['/', '/home', '/history', '/voucher', '/favourite', '/profile'];
                 this.headerType = (validRoutes.includes(routes) ? 'default' : 'back')
-
 
                 // Mark for check
                 this._changeDetectorRef.markForCheck();
@@ -87,4 +103,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
     // @ Public methods
     // -----------------------------------------------------------------------------------------------------
 
+    chooseCountry() {
+        const dialogRef = this._dialog.open(
+            CountryDialogComponent, {
+            width: '100%',
+        });
+        dialogRef.afterClosed().subscribe();
+
+        // Mark for check
+        this._changeDetectorRef.markForCheck();
+    }
 }

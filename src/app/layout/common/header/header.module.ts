@@ -5,10 +5,12 @@ import { SharedModule } from 'app/shared/shared.module';
 import { HeaderComponent } from './header.component';
 import { MatIconModule } from '@angular/material/icon';
 import { UserModule } from '../user/user.module';
+import { CountryDialogComponent } from './country-dialog/country-dialog.component';
 
 @NgModule({
     declarations: [
-        HeaderComponent
+        HeaderComponent,
+        CountryDialogComponent
     ],
     imports: [
         RouterModule,

@@ -1,0 +1,96 @@
+<div class="flex flex-col w-full h-full">
+
+    <!-- product child category -->
+    <div class="w-full grid grid-cols-3 gap-3 mb-4">
+        <ng-container *ngFor="let category of categories">
+            <div 
+                class="col-span-1 flex flex-col p-auto justify-center items-center border rounded-lg h-28 w-full"
+                [ngClass]=" category.id === selectedCategoryId ? 'bg-primary-200  border-primary' : ' border-gray-500' "
+                (click)="selectBill(category)">
+                <mat-icon 
+                    [svgIcon]="category.svgIcon"
+                    [ngClass]=" category.id === selectedCategoryId ? 'text-primary' : '' ">
+                </mat-icon>
+                <span
+                    [ngClass]=" category.id === selectedCategoryId ? 'text-primary' : '' " 
+                    class="font-semibold text-center mt-2">
+                    {{ category.category }}
+                </span>
+            </div>
+        </ng-container>
+    </div>
+
+    <!-- providers -->
+    <div
+        *ngIf="bills && selectedCategoryId"
+        class="w-full transition duration-500">
+        <mat-form-field class="w-full">
+            <mat-select
+                #providerSelector="matSelect"
+                disableOptionCentering
+                [placeholder]="'Select Provider'"
+                (selectionChange)="changeProvider(providerSelector.value)">
+                <!-- For all vertical except E-Commerce MYS -->
+                <ng-container *ngFor="let provider of bills">
+                    <mat-option
+                        [value]="provider.id">
+                        <div class="flex flex-row items-center">
+                            <img
+                                class="w-12 min-w-12 h-9 object-cover rounded-lg border border-gray-300"
+                                [alt]="'img'"
+                                [src]="provider.featuredImage">
+                            <span class="font-semibold pl-3 capitalize">{{ provider.productName | titlecase }}</span>
+                        </div>
+                    </mat-option>
+                </ng-container>
+                <mat-select-trigger>
+                    <div class="flex flex-row items-center w-full overflow-none relative">
+                        <!-- <div *ngIf="loadOperator" class="w-12 h-10 flex items-center justify-center rounded-lg border border-gray-300">
+                            <mat-progress-spinner
+                                class="flex items-center justify-center w-full mx-2"
+                                [diameter]="29"
+                                [mode]="'indeterminate'"></mat-progress-spinner>
+                        </div> -->
+                        <img
+                            class="m-0 p-0 w-12 min-w-12 h-10 object-cover rounded-lg border border-gray-300"
+                            [alt]="'img'"
+                            [src]="providerLogo? providerLogo : ''">
+                        <span class="font-semibold pl-3 capitalize">{{ providerSelector.triggerValue | titlecase }}</span>
+                    </div>
+                </mat-select-trigger>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <!-- details form -->
+    <div 
+        *ngIf="proceed"
+        class="w-full flex flex-col">
+        <mat-form-field appearance="outline">
+            <mat-label>Account Number</mat-label>
+            <input matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Amount</mat-label>
+            <input matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Mobile Number</mat-label>
+            <input matInput>
+        </mat-form-field>
+    </div>
+
+    <!-- action button -->
+    <div class="h-full w-full flex items-end">
+        <button
+            class="w-full"
+            mat-flat-button
+            [color]="'primary'"
+            [disabled]="true">
+            PROCEED
+        </button>
+    </div>
+
+</div>
